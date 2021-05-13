@@ -228,6 +228,25 @@ inference auroc  = 0.9005795694379782
 - training(test) auroc  = 0.934517511698956
 - inference auroc  = 0.9005795694379782
 
+## Check the detection result
+After the inference process , the output are parquet files , you can use parquet-tools to check the records
+```sh
+cd /opt/work/output
+pip install parquet-tools
+parquet-tools show part-00000-9c1b6468-7046-4f8e-9c20-f1061835ef2e-c000.snappy.parquet
++------------+---------------------------+--------------+--------------+-------------------+------------+-------------+--------------+-------------+------------------+-------------+---------------+------------+--------------+----------------+--------------+-------------+--------------------------------+---------------------------+---------------------+---------+----------------+------------------+
+| txn_date   |   agg_merch_country_index |   n_location |   n_acct_nbr |   n_dw_product_cd |   n_issuer |   n_channel |   n_postcode |   n_paypass |   n_card_present |   n_xborder |   n_recurring |   n_credit |   n_business |   median_spend |   mean_spend |   dayofweek |   flag_location_visits_outlier |   flag_paid_accts_outlier |   flag_txns_outlier |   label |   outlierScore |   predictedLabel |
+|------------+---------------------------+--------------+--------------+-------------------+------------+-------------+--------------+-------------+------------------+-------------+---------------+------------+--------------+----------------+--------------+-------------+--------------------------------+---------------------------+---------------------+---------+----------------+------------------|
+| 4/5/2021   |                   1742784 |            1 |            1 |                 1 |          1 |           1 |            1 |           0 |                1 |           1 |             0 |          1 |            0 |         141.84 |     141.84   |           1 |                              0 |                         0 |                   0 |       0 |       0.341788 |                0 |
+| 3/22/2021  |                   2033248 |            1 |            2 |                 2 |          2 |           1 |            1 |           0 |                2 |           2 |             0 |          1 |            0 |          48.92 |      48.42   |           1 |                              0 |                         0 |                   0 |       0 |       0.34115  |                0 |
+| 4/26/2021  |                   1742784 |            1 |            2 |                 1 |          2 |           1 |            1 |           0 |                2 |           2 |             0 |          2 |            0 |         109.27 |      56.795  |           1 |                              0 |                         0 |                   0 |       0 |       0.343135 |                0 |
+
+```
+Want to a CSV file ?
+```sh
+parquet-tools csv part-00000-9c1b6468-7046-4f8e-9c20-f1061835ef2e-c000.snappy.parquet > output1.csv
+```
+
 ## License
 Apache 2.0
 ## Copyright
