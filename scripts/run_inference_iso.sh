@@ -17,7 +17,7 @@ merchant-iso-forest.jar \
 --mode "inference" \
 --withLabel true \
 --withPartition false \
---partitionColumn "aggregate_merchant_index" \
+--partitionColumn "agg_merch_country_index" \
 --dataPathParams "/opt/work/data/curated_merchant_agg_train.csv,/opt/work/data/curated_merchant_agg_test.csv, csv, true" \
 --InferenceParam "/opt/work/model/,/opt/work/output/" \
 --categoricalColumns "dayofweek,flag_location_visits_outlier,flag_paid_accts_outlier,flag_txns_outlier,flag_spend_outlier" \
