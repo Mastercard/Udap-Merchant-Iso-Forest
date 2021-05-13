@@ -1,11 +1,11 @@
 # Isolation Forest anomaly detection for merchant data
 ## _Suqiang(Jack) Song , Mastercard_
 ## Background
---Given Mastercard worldwide large collection of 85 million active merchant locations and 19 k aggregate merchants ( brands)  , how do we algorithmically identify anomaly bases on key metrics ? Our assumption is to take advantage of the fact that for any aggregate merchant, the relatively locations that are problematic often appear very different and produce visitation patterns that are very different from locations of other aggregate merchants. In other words, we can treat this as an outlier detection problem. This problem then breaks down into:
---1.Identifying and creating relevant metrics(features) for each aggregate merchant by computing periodical aggregation from raw transactions with location matched
---2.Train Anomaly Detection models can cover multivariate aggregate merchants based on the features using outlier detection methods.
---3.Generating an outlier score for each aggregate merchant serving the models within conditional context ( time series , country(region) etc.)
---4.Validating outlier detection methods
+- Given Mastercard worldwide large collection of 85 million active merchant locations and 19 k aggregate merchants ( brands)  , how do we algorithmically identify anomaly bases on key metrics ? Our assumption is to take advantage of the fact that for any aggregate merchant, the relatively locations that are problematic often appear very different and produce visitation patterns that are very different from locations of other aggregate merchants. In other words, we can treat this as an outlier detection problem. This problem then breaks down into:
+- 1.Identifying and creating relevant metrics(features) for each aggregate merchant by computing periodical aggregation from raw transactions with location matched
+- 2.Train Anomaly Detection models can cover multivariate aggregate merchants based on the features using outlier detection methods.
+- 3.Generating an outlier score for each aggregate merchant serving the models within conditional context ( time series , country(region) etc.)
+- 4.Validating outlier detection methods
 
 ## Application cases
 - Merchant Auditing. Take into account the aggregate merchants which have anomaly data points as high priority list of merchant auditing list.
@@ -219,14 +219,14 @@ inference auroc  = 0.9005795694379782
 
 ```
 ## Evaluation of Outlier Detection – ROC & AUC
-Standard measures for evaluating anomaly detection problems:
---Recall (Detection rate) - ratio between the number of correctly detected anomalies and the total number of anomalies
---False alarm (false positive) rate – ratio between the number of data records from normal class that are misclassified as anomalies and the total number of data records from normal class 
---ROC Curve is a trade-off between detection rate and false alarm rate
---Area under the ROC curve (AUC) is computed using a trapezoid rule
-Based on the preapred training and test data sets 
-training(test) auroc  = 0.934517511698956
-inference auroc  = 0.9005795694379782
+- Standard measures for evaluating anomaly detection problems:
+- --Recall (Detection rate) - ratio between the number of correctly detected anomalies and the total number of anomalies
+- --False alarm (false positive) rate – ratio between the number of data records from normal class that are misclassified as anomalies and the total number of data records from normal class 
+- --ROC Curve is a trade-off between detection rate and false alarm rate
+- --Area under the ROC curve (AUC) is computed using a trapezoid rule
+- Based on the preapred training and test data sets 
+- training(test) auroc  = 0.934517511698956
+- inference auroc  = 0.9005795694379782
 
 ## License
 Apache 2.0
