@@ -1,11 +1,11 @@
 # Isolation Forest anomaly detection for merchant data
 ## _Suqiang(Jack) Song , Mastercard_
 ## Background
-Given Mastercard worldwide large collection of 85 million active merchant locations and 19 k aggregate merchants ( brands)  , how do we algorithmically identify anomaly bases on key metrics ? Our assumption is to take advantage of the fact that for any aggregate merchant, the relatively locations that are problematic often appear very different and produce visitation patterns that are very different from locations of other aggregate merchants. In other words, we can treat this as an outlier detection problem. This problem then breaks down into:
-1.Identifying and creating relevant metrics(features) for each aggregate merchant by computing periodical aggregation from raw transactions with location matched
-2.Train Anomaly Detection models can cover multivariate aggregate merchants based on the features using outlier detection methods.
-3.Generating an outlier score for each aggregate merchant serving the models within conditional context ( time series , country(region) etc.)
-4.Validating outlier detection methods
+--Given Mastercard worldwide large collection of 85 million active merchant locations and 19 k aggregate merchants ( brands)  , how do we algorithmically identify anomaly bases on key metrics ? Our assumption is to take advantage of the fact that for any aggregate merchant, the relatively locations that are problematic often appear very different and produce visitation patterns that are very different from locations of other aggregate merchants. In other words, we can treat this as an outlier detection problem. This problem then breaks down into:
+--1.Identifying and creating relevant metrics(features) for each aggregate merchant by computing periodical aggregation from raw transactions with location matched
+--2.Train Anomaly Detection models can cover multivariate aggregate merchants based on the features using outlier detection methods.
+--3.Generating an outlier score for each aggregate merchant serving the models within conditional context ( time series , country(region) etc.)
+--4.Validating outlier detection methods
 
 ## Application cases
 - Merchant Auditing. Take into account the aggregate merchants which have anomaly data points as high priority list of merchant auditing list.
